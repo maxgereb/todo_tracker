@@ -45,3 +45,10 @@ ul {
 .todo--buttons {
   margin-top: 10px;
 }
+
+.todo--border-bottom {
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  height: 1px;
+  margin-top: 5px;
+}
