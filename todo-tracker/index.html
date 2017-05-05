@@ -1,0 +1,190 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TODO-Tracker</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/own_styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <h1>TO-DO Tracker</h1>
+    </div>
+    <nav name="nav">
+      <ul class="nav nav-tabs">
+        <li class="active" id="nav--index">
+          <a href="/index">Home</a>
+        </li>
+        <li  id="nav--tutorial">
+          <a href="/tutorial">How To</a>
+        </li>
+        <li  id="nav--new">
+          <a href="/new">New To-Do</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <footer class="index--footer">
+    <div class="container">
+      <a href="/impressum">Impressum</a>
+    </div>
+  </footer>
+</body>
+
+<template name="index">
+  <div class="container">
+    <div class="index--content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          Take the hobbits to Isengard
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-1">
+          20.02.2018
+        </div>
+        <div class="col-xs-8 col-sm-3 col-md-2">
+          <div class="progress">
+            <div class="progress-bar progress--min-width" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+              <span>50%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+          et dolore magna aliquyam erat, sed diam voluptua. At v
+        </div>
+        <div class="col-xs-12">
+          <div class="btn-group todo--buttons" role="group">
+            <button class="btn btn-default" type="button" name="edit" data-toggle="modal" data-target="#editModal">Edit</button>
+            <button class="btn btn-default" type="button" name="delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo--border-bottom"></div>
+    </div>
+
+    <div class="index--content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          Get new rum
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-1">
+          20.02.2018
+        </div>
+        <div class="col-xs-8 col-sm-3 col-md-2">
+          <div class="progress">
+            <div class="progress-bar progress--min-width" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+              <span>0%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+          et dolore magna aliquyam erat, sed diam voluptua. At v
+        </div>
+        <div class="col-xs-12">
+          <div class="btn-group todo--buttons" role="group">
+            <button class="btn btn-default" type="button" name="edit" data-toggle="modal" data-target="#editModal">Edit</button>
+            <button class="btn btn-default" type="button" name="delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo--border-bottom"></div>
+    </div>
+
+    <div class="index--content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          Pass out in the sewer
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-1">
+          20.02.2018
+        </div>
+        <div class="col-xs-8 col-sm-3 col-md-2">
+          <div class="progress">
+            <div class="progress-bar progress--min-width" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+              <span>100%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+          et dolore magna aliquyam erat, sed diam voluptua. At v
+        </div>
+        <div class="col-xs-12">
+          <div class="btn-group todo--buttons" role="group">
+            <button class="btn btn-default" type="button" name="edit" data-toggle="modal" data-target="#editModal">Edit</button>
+            <button class="btn btn-default" type="button" name="delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo--border-bottom"></div>
+    </div>
+
+    <div class="index--content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          Meet a giant fish
+        </div>
+        <div class="col-xs-4 col-sm-3 col-md-1">
+          20.02.2018
+        </div>
+        <div class="col-xs-8 col-sm-3 col-md-2">
+          <div class="progress">
+            <div class="progress-bar progress--min-width" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+              <span>25%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+          et dolore magna aliquyam erat, sed diam voluptua. At v
+        </div>
+        <div class="col-xs-12">
+          <div class="btn-group todo--buttons" role="group">
+            <button class="btn btn-default" type="button" name="edit" data-toggle="modal" data-target="#editModal">Edit</button>
+            <button class="btn btn-default" type="button" name="delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="todo--border-bottom"></div>
+    </div>
+  </div>
+</template>
+
+<template name="new">
+  <div class="container">
+    <h1 class="page-header">Create new TO-DO</h1>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputTODO">Title:</label>
+        <input type="text" class="form-control" id="exampleInputTODO" placeholder="TO-DO">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputDeadline">Deadline:</label>
+        <input type="text" class="form-control" id="exampleInutDeadline" placeholder="Deadline">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputDeadline">Description:</label>
+        <input type="text" class="form-control description" id="exampleInutDescription" placeholder="Description">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</template>
+
+<template name="tutorial">
+  <div class="container">
+    <h1 class="page-header">How to edit a TO-DO</h1>
+    <p>Step 1: Click on "Edit"</p>
+    <p>Step 2: Edit it</p>
+    <p>Step 3: Click on "Save"</p>
+    <p>Step 4: Profit</p>
+  </div>
+</template>
+
+<template name="impressum">
+  <div class="container">
+    <h1>Created by H.Yang, T.Urban and M. Baumann</h1>
+  </div>
+</template>
