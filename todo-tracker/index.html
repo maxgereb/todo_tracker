@@ -13,7 +13,7 @@
     <nav name="nav">
       <ul class="nav nav-tabs">
         <li class="active" id="nav--index">
-          <a href="/index">Home</a>
+          <a href="/index">Home <span class="badge">{{todoCount}}</span></a>
         </li>
         <li  id="nav--tutorial">
           <a href="/tutorial">How To</a>
@@ -33,7 +33,7 @@
 </body>
 
 <template name="index">
-  <div class="container">
+  <div class="container submit--button">
     {{#each todo}}
       <div class="index--content">
         <div class="row">
@@ -63,12 +63,11 @@
         <div class="todo--border-bottom"></div>
       </div>
     {{/each}}
-
   </div>
 </template>
 
 <template name="newTodo">
-  <div class="container">
+  <div class="container submit--button">
     <h1 class="page-header">Create new TO-DO</h1>
     <form>
       <div class="form-group">
@@ -89,7 +88,7 @@
 </template>
 
 <template name="tutorial">
-  <div class="container">
+  <div class="container submit--button">
     <h1 class="page-header">How to edit a TO-DO</h1>
     <p>Step 1: Click on "Edit"</p>
     <p>Step 2: Edit it</p>
@@ -99,7 +98,7 @@
 </template>
 
 <template name="edit">
-  <div class="container">
+  <div class="container submit--button">
     <h1 class="page-header">Edit TO-DO</h1>
     <form>
       <div class="form-group">
@@ -124,7 +123,7 @@
 </template>
 
 <template name="impressum">
-  <div class="container">
+  <div class="container submit--button">
     <h1>Created by H.Yang, T.Urban and M. Baumann</h1>
   </div>
 </template>

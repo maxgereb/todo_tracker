@@ -46,18 +46,23 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.body.helpers({
+    'todoCount': function() {
+        return TodoList.find().count();
+    }
+  });
 
   Template.newTodo.events({
       'submit form': function(){
-          // event.preventDefault();
           var todoTitleVar = event.target.todoTitle.value;
-          // console.log(todoTitleVar)
+          if (todoTitleVar == '') {
+              event.preventDefault();
+              return;
+          }
 
           var todoDeadlineVar = event.target.todoDeadline.value;
-          // console.log(todoDeadlineVar);
 
           var todoDescriptionVar = event.target.todoDescription.value;
-          // console.log(todoDescriptionVar);
 
           TodoList.insert({ title: todoTitleVar, deadline: todoDeadlineVar, progress: 0, description: todoDescriptionVar});
 
@@ -109,19 +114,18 @@ if (Meteor.isClient) {
 
   Template.edit.events({
     'submit form': function(){
-      // event.preventDefault();
 
       var todoTitleVar = event.target.todoTitle.value;
-      // console.log(todoTitleVar)
+      if (todoTitleVar == '') {
+          event.preventDefault();
+          return;
+      }
 
       var todoDeadlineVar = event.target.todoDeadline.value;
-      // console.log(todoDeadlineVar);
 
       var todoProgressVar = event.target.todoProgress.value;
-      // console.log(todoDeadlineVar);
 
       var todoDescriptionVar = event.target.todoDescription.value;
-      // console.log(todoDescriptionVar);
 
       TodoList.update(todoEditId, {title: todoTitleVar, deadline: todoDeadlineVar, progress: todoProgressVar, description: todoDescriptionVar});
 
