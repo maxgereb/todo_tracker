@@ -30,9 +30,24 @@ Router.route('/impressum', function () {
   document.getElementById('nav--tutorial').setAttribute('class', '');
 });
 
+Router.route('/edit', function () {
+  this.render('edit');
+  document.getElementById('nav--new').setAttribute('class', '');
+  document.getElementById('nav--index').setAttribute('class', '');
+  document.getElementById('nav--tutorial').setAttribute('class', '');
+});
+
 TodoList = new Mongo.Collection('todos');
 
 if (Meteor.isClient) {
+  Template.index.helpers({
+    'todo': function(){
+        return TodoList.find();
+    }
+  });
+
+  
+
   Template.newTodo.events({
       'submit form': function(){
           // event.preventDefault();
@@ -47,5 +62,11 @@ if (Meteor.isClient) {
 
           TodoList.insert({ title: todoTitleVar, deadline: todoDeadlineVar, progress: 0, description: todoDescriptionVar});
       }
+  });
+
+  Template.index.events({
+    'click #todoDelete': function() {
+        TodoList.remove(this._id);
+    }
   });
 }

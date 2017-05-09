@@ -53,6 +53,11 @@ ul {
   margin-top: 5px;
 }
 
-.todo--delete {
-  display: none;
+.todo--edit:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.todo--edit {
+  color: black;
 }
