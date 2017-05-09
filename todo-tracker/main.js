@@ -60,6 +60,9 @@ if (Meteor.isClient) {
           // console.log(todoDescriptionVar);
 
           TodoList.insert({ title: todoTitleVar, deadline: todoDeadlineVar, progress: 0, description: todoDescriptionVar});
+
+          Router.go('/index');
+          event.preventDefault();
       }
   });
 
@@ -80,6 +83,9 @@ if (Meteor.isClient) {
       todoEditDeadline = this.deadline;
       todoEditProgress = this.progress;
       todoEditDescription = this.description;
+
+      Router.go('/edit');
+      event.preventDefault();
     }
   });
 
@@ -118,6 +124,9 @@ if (Meteor.isClient) {
       // console.log(todoDescriptionVar);
 
       TodoList.update(todoEditId, {title: todoTitleVar, deadline: todoDeadlineVar, progress: todoProgressVar, description: todoDescriptionVar});
+
+      Router.go('/index');
+      event.preventDefault();
     }
   });
 }

@@ -55,7 +55,7 @@
           </div>
           <div class="col-xs-12">
             <div class="btn-group todo--buttons" role="group">
-              <button class="btn btn-default" id="todoEdit" type="button" name="edit" data-toggle="modal" data-target="#editModal"><a href="/edit" class="todo--edit">Edit</a></button>
+              <button class="btn btn-default todo--edit" id="todoEdit" type="button" name="edit" data-toggle="modal" data-target="#editModal">Edit</button>
               <button class="btn btn-default" id="todoDelete" type="button" name="delete">Delete</button>
             </div>
           </div>
@@ -83,7 +83,7 @@
         <label for="exampleInputDeadline">Description:</label>
         <input type="text" class="form-control description" id="exampleInutDescription" placeholder="Description" name="todoDescription">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default submit--button">Submit</button>
     </form>
   </div>
 </template>
@@ -112,13 +112,13 @@
       </div>
       <div class="form-group">
         <label for="exampleInputProgress">Progress:</label>
-        <input type="text" class="form-control" id="exampleInutProgress" placeholder="Progress" name="todoProgress" value="{{editProgress}}">
+        <input type="range" class="form-control" id="exampleInutProgress" placeholder="Progress" name="todoProgress" value="{{editProgress}}">
       </div>
       <div class="form-group">
         <label for="exampleInputDeadline">Description:</label>
         <input type="text" class="form-control description" id="exampleInutDescription" placeholder="Description" name="todoDescription" value="{{editDescription}}">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default submit--button">Submit</button>
     </form>
   </div>
 </template>
