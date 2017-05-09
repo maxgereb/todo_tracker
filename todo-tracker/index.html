@@ -55,7 +55,7 @@
           </div>
           <div class="col-xs-12">
             <div class="btn-group todo--buttons" role="group">
-              <button class="btn btn-default" type="button" name="edit" data-toggle="modal" data-target="#editModal"><a href="/edit" class="todo--edit">Edit</a></button>
+              <button class="btn btn-default" id="todoEdit" type="button" name="edit" data-toggle="modal" data-target="#editModal"><a href="/edit" class="todo--edit">Edit</a></button>
               <button class="btn btn-default" id="todoDelete" type="button" name="delete">Delete</button>
             </div>
           </div>
@@ -104,19 +104,19 @@
     <form>
       <div class="form-group">
         <label for="exampleInputTODO">Title:</label>
-        <input type="text" class="form-control" id="exampleInputTODO" placeholder="TO-DO" name="todoTitle">
+        <input type="text" class="form-control" id="exampleInputTODO" placeholder="TO-DO" name="todoTitle" value="{{editTitle}}">
       </div>
       <div class="form-group">
         <label for="exampleInputDeadline">Deadline:</label>
-        <input type="text" class="form-control" id="exampleInutDeadline" placeholder="Deadline" name="todoDeadline">
+        <input type="text" class="form-control" id="exampleInutDeadline" placeholder="Deadline" name="todoDeadline" value="{{editDeadline}}">
       </div>
       <div class="form-group">
-        <label for="exampleInputDeadline">Progress:</label>
-        <input type="text" class="form-control" id="exampleInutProgress" placeholder="Progress" name="todoDeadline">
+        <label for="exampleInputProgress">Progress:</label>
+        <input type="text" class="form-control" id="exampleInutProgress" placeholder="Progress" name="todoProgress" value="{{editProgress}}">
       </div>
       <div class="form-group">
         <label for="exampleInputDeadline">Description:</label>
-        <input type="text" class="form-control description" id="exampleInutDescription" placeholder="Description" name="todoDescription">
+        <input type="text" class="form-control description" id="exampleInutDescription" placeholder="Description" name="todoDescription" value="{{editDescription}}">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>

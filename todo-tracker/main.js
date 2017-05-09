@@ -46,7 +46,6 @@ if (Meteor.isClient) {
     }
   });
 
-  
 
   Template.newTodo.events({
       'submit form': function(){
@@ -64,9 +63,61 @@ if (Meteor.isClient) {
       }
   });
 
+  var todoEditId;
+  var todoEditTitle;
+  var todoEditDeadline;
+  var todoEditProgress;
+  var todoEditDescription;
+
   Template.index.events({
     'click #todoDelete': function() {
         TodoList.remove(this._id);
+    },
+
+    'click #todoEdit': function() {
+      todoEditId = this._id;
+      todoEditTitle = this.title;
+      todoEditDeadline = this.deadline;
+      todoEditProgress = this.progress;
+      todoEditDescription = this.description;
+    }
+  });
+
+  Template.edit.helpers({
+    'editTitle': function() {
+      return todoEditTitle;
+    },
+
+    'editDeadline': function() {
+      return todoEditDeadline;
+    },
+
+    'editProgress': function() {
+      return todoEditProgress;
+    },
+
+    'editDescription': function() {
+      return todoEditDescription;
+    }
+  });
+
+  Template.edit.events({
+    'submit form': function(){
+      // event.preventDefault();
+
+      var todoTitleVar = event.target.todoTitle.value;
+      // console.log(todoTitleVar)
+
+      var todoDeadlineVar = event.target.todoDeadline.value;
+      // console.log(todoDeadlineVar);
+
+      var todoProgressVar = event.target.todoProgress.value;
+      // console.log(todoDeadlineVar);
+
+      var todoDescriptionVar = event.target.todoDescription.value;
+      // console.log(todoDescriptionVar);
+
+      TodoList.update(todoEditId, {title: todoTitleVar, deadline: todoDeadlineVar, progress: todoProgressVar, description: todoDescriptionVar});
     }
   });
 }
